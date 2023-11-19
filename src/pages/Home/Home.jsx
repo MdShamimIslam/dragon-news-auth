@@ -10,7 +10,7 @@ import NewsCard from './NewsCard';
 
 const Home = () => {
     const news = useLoaderData();
-    console.log(news);
+    
     
     return (
         <div>
@@ -23,7 +23,7 @@ const Home = () => {
                 </div>
                 <div className='md:col-span-2'>
                     {
-                        news.map(singleNews => <NewsCard
+                        news?.map(singleNews => <NewsCard
                             key={singleNews._id}
                             singleNews={singleNews}
                         ></NewsCard>)

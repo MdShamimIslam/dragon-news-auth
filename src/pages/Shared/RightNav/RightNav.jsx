@@ -26,11 +26,11 @@ const RightNav = () => {
             </a>
             <a href="" className='flex items-center text-lg border p-3 rounded-x-lg'>
                 <FaTwitter className='mr-2'></FaTwitter>
-                Facebook
+                Twitter
             </a>
             <a href="" className='flex items-center text-lg border p-3 rounded-b-lg'>
                 <FaInstagram className='mr-2'></FaInstagram>
-                Facebook
+                Instagram
             </a>
             </div>
             <div className='mb-6'>
