@@ -2,18 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { CiShare2, CiBookmark } from "react-icons/ci";
 import { IoEye } from "react-icons/io5";
+import Rating from "react-rating";
 
 const NewsCard = ({ singleNews }) => {
-  const { _id, title, details, image_url,author,rating,total_view } = singleNews;
+  const { _id, title, details, image_url, author, rating, total_view } =
+    singleNews;
   return (
     <div className="my-6 border p-2">
       <div className="flex items-center justify-between bg-slate-100 p-4 rounded">
         <div className="flex items-center gap-4">
-            <div className="avatar">
-              <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img src={author?.img} />
-              </div>
+          <div className="avatar">
+            <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+              <img src={author?.img} />
             </div>
+          </div>
           <div>
             <p className="font-semibold">{author?.name}</p>
             <p>{author?.published_date}</p>
@@ -43,18 +45,13 @@ const NewsCard = ({ singleNews }) => {
         </div>
         <div className="flex items-center justify-between mt-2">
           <div className="flex items-center gap-2 mt-2">
-          <div className="rating">
-            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-          </div>
-          {/* <p className="text-xl">{rating.number}</p> */}
+           
+            <Rating initialRating={rating.number} readonly />
+            <p className="text-xl">{rating.number}</p>
           </div>
           <div className="flex items-center gap-2">
-          <IoEye  className="text-xl"/>
-          <p className="text-xl">{total_view}</p>
+            <IoEye className="text-xl" />
+            <p className="text-xl">{total_view}</p>
           </div>
         </div>
       </div>
